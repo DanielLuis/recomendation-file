@@ -5,9 +5,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.orche.dto.RecommendationReportDto;
+import com.orche.model.ProductInformation;
 import com.orche.model.Sale;
 import com.orche.model.SaleInformation;
-import com.orche.model.ProductInformation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
@@ -27,6 +27,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import static com.orche.config.CachingConfig.PRODUCT_CUSTOMERS;
+import static com.orche.config.CachingConfig.PRODUCT_QUANTITY;
+import static com.orche.config.CachingConfig.RECOMMENDATION_REPORT;
 import static java.util.function.Predicate.isEqual;
 import static java.util.function.Predicate.not;
 import static java.util.stream.Collectors.groupingBy;
@@ -38,6 +40,7 @@ import static java.util.stream.Collectors.mapping;
 public class RecommendationSystemServiceImpl implements RecommendationSystemService {
 
     @Override
+    @Cacheable(RECOMMENDATION_REPORT)
     public RecommendationReportDto processSalesFile(MultipartFile multipartFile) {
         Instant start = Instant.now();
 
@@ -52,7 +55,6 @@ public class RecommendationSystemServiceImpl implements RecommendationSystemServ
         Instant finish = Instant.now();
 
         return RecommendationReportDto.builder()
-                .sales(saleInformation.getSales())
                 .productQuantityReport(productQuantity)
                 .productInformations(productInformation)
                 .time(Duration.between(start, finish).toSeconds())
@@ -71,6 +73,7 @@ public class RecommendationSystemServiceImpl implements RecommendationSystemServ
                 .collect(groupingBy(Sale::getProductId, mapping(Sale::getUserId, Collectors.toSet())));
     }
 
+    @Cacheable(PRODUCT_QUANTITY)
     private Set<String> getProductQuantity(Map<Integer, Set<Integer>> productCustomers) {
         return productCustomers.entrySet()
                 .stream()

@@ -5,6 +5,7 @@ import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.stereotype.Component;
 
 import static com.orche.config.CachingConfig.PRODUCT_CUSTOMERS;
+import static com.orche.config.CachingConfig.PRODUCT_QUANTITY;
 import static com.orche.config.CachingConfig.RECOMMENDATION_REPORT;
 import static java.util.Arrays.asList;
 
@@ -13,6 +14,6 @@ public class SimpleCacheCustomizer implements CacheManagerCustomizer<ConcurrentM
 
     @Override
     public void customize(ConcurrentMapCacheManager cacheManager) {
-        cacheManager.setCacheNames(asList(PRODUCT_CUSTOMERS, RECOMMENDATION_REPORT));
+        cacheManager.setCacheNames(asList(PRODUCT_CUSTOMERS, RECOMMENDATION_REPORT,PRODUCT_QUANTITY));
     }
 }

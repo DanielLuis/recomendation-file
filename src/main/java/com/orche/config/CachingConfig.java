@@ -12,9 +12,10 @@ public class CachingConfig {
 
     public static final String PRODUCT_CUSTOMERS = "productCustomers";
     public static final String RECOMMENDATION_REPORT = "recommendationReport";
+    public static final String PRODUCT_QUANTITY = "productQuantity";
 
     @Bean
     public CacheManager cacheManager() {
-        return new ConcurrentMapCacheManager(PRODUCT_CUSTOMERS, RECOMMENDATION_REPORT);
+        return new ConcurrentMapCacheManager(PRODUCT_CUSTOMERS, RECOMMENDATION_REPORT,PRODUCT_QUANTITY);
     }
 }

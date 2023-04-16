@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @OpenAPIDefinition(info = @Info(title = "Recommendation System API", version = "1.0", description = "Recommendation System Process"))
 public class BootApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(BootApplication.class, args);
     }

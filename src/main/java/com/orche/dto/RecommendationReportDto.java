@@ -1,6 +1,7 @@
 package com.orche.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.orche.model.ProductInformation;
 import com.orche.model.Sale;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -15,15 +16,13 @@ import java.util.Set;
 @Schema(name = "RecommendationReport")
 public class RecommendationReportDto {
 
-    @Schema(description = "A structure that will contain the amount of customers that have bought a specific")
-    List<Sale> sales;
-
-    @Schema(description = " The total amount of customers that bought this product", example = "3 Customers bought this product 1")
+    @Schema(description = " A structure that will contain the amount of customers that have bought a specific", example = "3 Customers bought this product 1")
     Set<String> productQuantityReport;
 
     @Schema(description = "A structure that will associate every product to each other (N*N), every association will contain the following info")
     List<ProductInformation> productInformations;
 
     @Schema(description = "execution time", example = "3")
+    @JsonIgnore
     long time;
 }

@@ -28,7 +28,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="com.orche" level="debug"/>
+        <Logger name="com.ochre" level="debug"/>
 
         <Logger name="file" level="debug" additivity="false">
             <appender-ref ref="FILE"/>

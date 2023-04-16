@@ -1,6 +1,6 @@
-package com.orche.service;
+package com.ochre.service;
 
-import com.orche.dto.RecommendationReportDto;
+import com.ochre.dto.RecommendationReportDto;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface RecommendationSystemService {

@@ -1,9 +1,8 @@
-package com.orche.dto;
+package com.ochre.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.orche.model.ProductInformation;
-import com.orche.model.Sale;
+import com.ochre.model.ProductInformation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.orche.controller;
+package com.ochre.controller;
 
-import com.orche.dto.RecommendationReportDto;
+import com.ochre.dto.RecommendationReportDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

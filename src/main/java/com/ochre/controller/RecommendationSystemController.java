@@ -1,6 +1,6 @@
-package com.orche.controller;
+package com.ochre.controller;
 
-import com.orche.service.RecommendationSystemService;
+import com.ochre.service.RecommendationSystemService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;

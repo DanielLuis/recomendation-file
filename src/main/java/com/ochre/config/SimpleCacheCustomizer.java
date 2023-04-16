@@ -1,12 +1,12 @@
-package com.orche.config;
+package com.ochre.config;
 
 import org.springframework.boot.autoconfigure.cache.CacheManagerCustomizer;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.stereotype.Component;
 
-import static com.orche.config.CachingConfig.PRODUCT_CUSTOMERS;
-import static com.orche.config.CachingConfig.PRODUCT_QUANTITY;
-import static com.orche.config.CachingConfig.RECOMMENDATION_REPORT;
+import static com.ochre.config.CachingConfig.PRODUCT_CUSTOMERS;
+import static com.ochre.config.CachingConfig.PRODUCT_QUANTITY;
+import static com.ochre.config.CachingConfig.RECOMMENDATION_REPORT;
 import static java.util.Arrays.asList;
 
 @Component

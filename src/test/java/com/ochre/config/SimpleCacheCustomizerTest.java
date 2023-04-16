@@ -1,13 +1,13 @@
-package com.orche.config;
+package com.ochre.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.CacheManager;
 
-import static com.orche.config.CachingConfig.PRODUCT_CUSTOMERS;
-import static com.orche.config.CachingConfig.PRODUCT_QUANTITY;
-import static com.orche.config.CachingConfig.RECOMMENDATION_REPORT;
+import static com.ochre.config.CachingConfig.PRODUCT_CUSTOMERS;
+import static com.ochre.config.CachingConfig.PRODUCT_QUANTITY;
+import static com.ochre.config.CachingConfig.RECOMMENDATION_REPORT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest("spring.cache.type=simple")

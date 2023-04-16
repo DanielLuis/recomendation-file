@@ -1,6 +1,6 @@
-package com.orche.service;
+package com.ochre.service;
 
-import com.orche.dto.RecommendationReportDto;
+import com.ochre.dto.RecommendationReportDto;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -40,8 +40,6 @@ class RecommendationSystemServiceImplTest {
         RecommendationReportDto recommendationReportDto = recommendationSystemService.processSalesFile(file);
 
         assertThat(recommendationReportDto).isNotNull();
-        assertThat(recommendationReportDto.getSales()).isNotNull();
-        assertThat(recommendationReportDto.getSales()).hasSize(saleSize);
         assertThat(recommendationReportDto.getProductQuantityReport()).isNotNull();
         assertThat(recommendationReportDto.getProductQuantityReport()).hasSize(productReportSize);
         assertThat(recommendationReportDto.getProductInformations()).isNotNull();

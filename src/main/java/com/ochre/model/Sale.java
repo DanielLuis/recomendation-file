@@ -1,20 +1,18 @@
-package com.orche.model;
+package com.ochre.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-
 @Data
-@Builder
 @RequiredArgsConstructor
 @AllArgsConstructor
-@Schema(name = "ProductInformation")
-public class ProductInformation {
+@Schema(name = "Sale")
+public class Sale {
+    @JsonProperty(value = "PRODUCT")
     private int productId;
-    private int relatedProductId;
-    private int quantity;
-    private double m1;
+    @JsonProperty(value = "USER")
+    private int userId;
 }

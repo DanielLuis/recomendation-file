@@ -1,4 +1,4 @@
-package com.orche.model;
+package com.ochre.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
